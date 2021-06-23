@@ -1,9 +1,13 @@
 import Path from 'path';
-import { Sequelize, STRING, NUMBER, DATE, NOW } from 'sequelize';
-const sequelize = new Sequelize('','','', {
-    dialect: 'sqlite',
-    storage: Path.join('tmp', 'openMusic.sqlite')
-})
+import { Sequelize, STRING, NUMBER, DATE, NOW, INTEGER } from 'sequelize';
+import { PGUSER, PGPASSWORD, PGDATABASE, PGHOST, PGPORT } from '../Config/config';
+
+// const sequelize = new Sequelize('','','', {
+//     dialect: 'sqlite',
+//     storage: Path.join('tmp', 'openMusic.sqlite')
+// })
+
+const sequelize = new Sequelize(`postgres://${PGUSER}:${PGPASSWORD}@${PGHOST}:${PGPORT}/${PGDATABASE}`);
 
 const Music = sequelize.define('music', {
     id: {
@@ -11,10 +15,10 @@ const Music = sequelize.define('music', {
         primaryKey: true
     },
     title: STRING,
-    year: NUMBER,
+    year: INTEGER,
     performer: STRING,
     genre: STRING,
-    duration: NUMBER,
+    duration: INTEGER,
     insertedAt: {
         field: 'createdAt',
         type: DATE,

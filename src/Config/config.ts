@@ -3,3 +3,8 @@ config.config();
 export const PORT: number = Number(process.env.PORT) || 5000;
 export const HOST: string = process.env.HOST || '0.0.0.0';
 export const ENV: string = process.env.ENV || 'production';
+export const PGUSER: string = process.env.PGUSER || 'wazier';
+export const PGPASSWORD: string = process.env.PGPASSWORD || 'asdasdasd';
+export const PGDATABASE: string = process.env.PGDATABASE || 'wazier';
+export const PGHOST: string = process.env.PGHOST || '127.0.0.1';
+export const PGPORT: number = Number(process.env.PGPORT) || 5432;

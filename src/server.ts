@@ -10,18 +10,16 @@ const INIT = async () => {
 
     server.route(API);
 
-    server.route([
-        {
-            method: '*',
-            path: '/{p*}',
-            handler: (req: Request, h: ResponseToolkit) => {
-                return h.response({
-                    status: 'fail',
-                    message: 'Route Not Found'
-                }).code(404)
-            }
+    server.route({
+        method: '*',
+        path: '/{p*}',
+        handler: (req: Request, h: ResponseToolkit) => {
+            return h.response({
+                status: 'fail',
+                message: 'Route Not Found'
+            }).code(404)
         }
-    ])
+    })
 
     await server.start();
     console.log(`Server Starting on : ${server.info.uri}`)

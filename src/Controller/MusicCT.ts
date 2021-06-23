@@ -129,6 +129,7 @@ export default {
             Object.keys(payload).map(d => {
                 update[d] = payload[d]
             })
+            update.updatedAt = new Date();
             await update.save();
 
             return h.response({
