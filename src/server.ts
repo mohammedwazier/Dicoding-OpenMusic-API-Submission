@@ -7,9 +7,7 @@ const INIT = async () => {
         port: PORT,
         host: HOST
     })
-
     server.route(API);
-
     server.route({
         method: '*',
         path: '/{p*}',
@@ -20,7 +18,6 @@ const INIT = async () => {
             }).code(404)
         }
     })
-
     await server.start();
     console.log(`Server Starting on : ${server.info.uri}`)
 }
