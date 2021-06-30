@@ -3,16 +3,16 @@ import { Request, ResponseToolkit, ResponseEventHandler } from "@hapi/hapi"
 import Songs from '../Database/Conn';
 import { nanoid } from 'nanoid';
 
-// const MusicSample: object = {
-//     "id": "song-Qbax5Oy7L8WKf74l",
-//     "title": "Kenangan Mantan",
-//     "year": 2021,
-//     "performer": "Dicoding",
-//     "genre": "Indie",
-//     "duration": 120,
-//     "insertedAt": "2021-03-04T09:11:44.598Z",
-//     "updatedAt": "2021-03-04T09:11:44.598Z"
-// }
+const MusicSample: object = {
+    "id": "song-Qbax5Oy7L8WKf74l",
+    "title": "Kenangan Mantan",
+    "year": 2021,
+    "performer": "Dicoding",
+    "genre": "Indie",
+    "duration": 120,
+    "insertedAt": "2021-03-04T09:11:44.598Z",
+    "updatedAt": "2021-03-04T09:11:44.598Z"
+}
 
 export default {
     CreateSongs: async (req: Request, h: ResponseToolkit) => {
